@@ -19,6 +19,8 @@ public class Homepage extends Ultilityclass {
 @FindBys({
 	@FindBy(xpath = "//header//div//ul[@class='groupmenu']//a")
 })
+
+
 private java.util.List<WebElement> groupMenuLinks1;
 
 public java.util.List<WebElement> getGroupMenuLinks1() {

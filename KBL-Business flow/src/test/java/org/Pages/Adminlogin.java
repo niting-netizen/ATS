@@ -11,9 +11,19 @@ public class Adminlogin extends Ultilityclass {
 		PageFactory.initElements(driver, this);
 	}
 
-     @FindBy(xpath="(//button[@class='action-tertiary action-clear'])[1]")
-     private WebElement Clearallinlorderdetailpage;
+   
 
+      @FindBy(xpath="//div[@data-ui-id='messages-message-error']")
+      private WebElement lspSyncOrderFailed;
+
+      public WebElement getLspSyncOrderFailed() {
+          return lspSyncOrderFailed;
+      }
+
+
+        @FindBy(xpath="(//button[@class='action-tertiary action-clear'])[1]")
+     private WebElement Clearallinlorderdetailpage;
+     
        @FindBy(xpath="(//button[@class='action-default'])[1]")
      private WebElement Filteroptions;
 
@@ -113,6 +123,13 @@ public class Adminlogin extends Ultilityclass {
           return OrderNumberlistingpage;
      }
 
+       @FindBy(xpath="(//div[@class='data-grid-cell-content'])[4]")
+     private WebElement Ewarrantyserialnumber;
+
+     public WebElement getEwarrantyserialnumber() {
+          return Ewarrantyserialnumber;
+     }
+
      public WebElement getWarhouseallcation() {
           return Warhouseallcation;
      }
@@ -140,6 +157,23 @@ public class Adminlogin extends Ultilityclass {
       @FindBy(xpath="//li[@id='menu-ambab-core-menu']")
       private WebElement AMbab;
 
+
+     @FindBy(xpath="//li[@Class='item-iksula-saleswarranty    level-1']")
+     private WebElement EwarrantyManage;
+
+
+     public WebElement getEwarrantyManage() {
+               return EwarrantyManage;
+     }
+
+
+     @FindBy(xpath="//li[@id='menu-iksula-sales-warranty']")
+     private WebElement Ewarranty;
+
+     public WebElement getEwarranty() {
+          return Ewarranty;
+      }
+
       @FindBy(xpath="//li[@id='menu-biztech-inventorysystem-base']")
       private WebElement Warehouse;
 
@@ -154,6 +188,8 @@ public class Adminlogin extends Ultilityclass {
       private WebElement Ambabpdppincode;
 
         
+
+
       
      @FindBy(xpath="//li[@Class='item-iksula-stocklisting-stocklisting    level-1']")
      private WebElement Warehousestocklisting;

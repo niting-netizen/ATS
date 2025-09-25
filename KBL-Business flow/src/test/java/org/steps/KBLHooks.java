@@ -1,5 +1,7 @@
 package org.steps;
 
+import java.io.IOException;
+
 import org.base.Ultilityclass;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -35,22 +37,22 @@ public class KBLHooks extends Ultilityclass {
 	   
 	}
 	@After
-	public void End(Scenario s)  {
+	public void End(Scenario s) throws IOException  {
 		
+	
 		if (s.isFailed()) {
 			
 			TakesScreenshot tk =(TakesScreenshot)driver;
-
 			byte[] screenshotAs = tk.getScreenshotAs(OutputType.BYTES);
 		 
+			//s.embed(screenshotAs, "image/png");
+			
 			s.attach(screenshotAs,"image/png" , s.getName());
 			
 		} else {
 			
-			
 			//allScreenshot1("screen");
 			
-
 		}
 	
 	}

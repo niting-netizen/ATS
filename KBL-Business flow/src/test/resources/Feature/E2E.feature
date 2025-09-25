@@ -83,19 +83,57 @@ And   Enter the pincode detail and Add to cart.Then,Go to chekout page
 And   Select the  the shipping and billing details and Place the order
 And   the user opens the admin login page  
 And   the user enters valid login credentials and clicks the Sign In button  
-And   Admin user get the warehouse code from sales order detail page
+Then   After,loggein admin site>To be verify the Warehouse  allocation code btw the order detail page and Warehouse stock listing page
 
 Examples:
           |Product1|    
-          |D11430150280| 
+          |D41XB00502041033| 
    
-#@Case9
-#Given user opens the Home page and do the login with valid credential
-#When  Navigate to the Installation/Service page and On click the enquiry CTA
-#And   User Fill to the 'Billing address' and 'Address for service location' and Submit the form
- 
 
+@Case9
+Scenario: To validate pump product  orders detail in Warehouse portal  and  E-warrnaty page based on the Allocation warehouse code 
+
+Given user opens the Home page and do the login with valid credential 
+When  After,loggedin>User need to Place the order successfully
+And   Observe the Pump  products placed Orderid and Allocated warehousecode from admin order detail page
+Then  To verify the Orderid are sync or not E-warranty page at admin portal
   
+
+@Case10
+
+Scenario: To validate pump products  LSP option btw the Order tagging and order detail page
+
+Given user opens the Home page and do the login with valid credential 
+When  User need to Place the order successfully and change the status to ready for Ship
+Then  Observe the  Showing LSP correct or not in listing of order page for pump products from Order tagging page
+
+
+@Case11
+Scenario:  To Validate  all the  orders showing or not in   Global warhouse portal page
+
+Given  Warhouse Suppiler  open the home page and do the login with valid credential 
+When   After,loggedin>Admin  go My orders listing page
+Then   Observe the place Orderid and All the warehouse city filter finctionality
+
+
+@Case12
+Scenario: To validate  Spare products orders  in Warehouse portal page based on the Allocation warehouse code
+  
+Given the user opens the home page and login into the application
+When  the user navigates to the Spare Products listing page from the category menu
+And   adds an item to the cart and places the order successfully
+And    Observe the Spare products placed Orderid and   Allocated warehousecode from admin order detail page
+Then  the verify the Ready to ship status and Observe the LSP Options in Pop-up page in Listing of the Order  page
+
+@Case13
+Scenario: To validate  Sync order without marking status as 'Ready to Ship' showing error 
+  
+Given  the user  login into the application
+When   User adds the  item to the cart and places the order successfully
+And    Admin user  verify the Before Ready to ship status.This order is sync or not to LSP system
+Then   Observe the Notification message in LSP Pgae
+
+
 
 
 

@@ -11,6 +11,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -189,7 +193,19 @@ public  static void close() {
     	eleName.click();
 
 }
+
+
+      public static void verifyButton(WebElement element, String expectedText) {
+        
+        assertTrue("Element not displayed: " + expectedText, element.isDisplayed());
+        assertEquals("Text mismatch for button", expectedText, element.getText().trim());
+    }
+
      /*
+
+
+
+     
 	  * @ Purpose: Clear the Values
 	  */
     
@@ -455,7 +471,8 @@ public void waitUntilVisible(WebElement element) {
  	 TakesScreenshot tk = (TakesScreenshot) driver;
  	 
  	 File ScreenshotAs =tk.getScreenshotAs(OutputType.FILE);
-     File  des = new File("E:\\MOHAN\\AKI-Petit\\Screenshot\\"+screen+".jpg");
+     File  des = new File("E:\\KBL-Project\\KBL-Business flow\\Screenshot\\"+screen+".jpg");
+
  	 FileUtils.copyFile(ScreenshotAs, des);
  	 
  	 }
@@ -706,9 +723,9 @@ public static void waitUntilClickable(WebElement categoryLink) {
       * @ Purpose:  Verification Using By text
       */
 
-     public static void checkequaltext(String commit,String  Value1 ,String Actual) {
+     public static void checkequaltext(String commit,String  Value1 ,String sKU2) {
 
-    	 Assert.assertEquals(commit, Value1, Actual);
+    	 Assert.assertEquals(commit, Value1, sKU2);
     	
       }
      /*
@@ -740,7 +757,6 @@ public static void waitUntilClickable(WebElement categoryLink) {
     	 A.dismiss();
 
       }
-
 
      /*
       * @ Purpose:  To read the Excel
@@ -957,7 +973,6 @@ public static void writeToExcel2(List<String> data, String fileName) {
         e.printStackTrace();
     }
 }
-
 
 
 public List<String> readWarehouseCodesFromExcel(String filePath) {
