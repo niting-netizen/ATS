@@ -1,0 +1,80 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+!.env.example
+!.env.example.local
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+
+# Testing
+/coverage
+.nyc_output
+test-results/
+jest-results.json
+
+# IDE & Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs & temporary files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.tmp
+tmp/
+temp/
+
+# Uploads
+uploads/
+
+# Cache
+.cache
+.eslintcache
+.eslint-cache
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Database backups & data
+*.sql.bak
+database/data/
+db_backup/
+
+# Reports and test artifacts
+Reports */
+**/Reports/
+cfrbackup-*/
+
+# Personal planning/demo notes — not app code
+*.docx
+*.xlsx
+
+# Misc
+*.bak
+*.swp
+.vagrant/
